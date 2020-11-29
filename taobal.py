@@ -1,17 +1,14 @@
 # -*- coding:utf8 -*-
 import re
+from time import sleep
 
 from selenium import webdriver
-from time import sleep
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-
 # 引入 ActionChains 类
 from selenium.webdriver.common.action_chains import ActionChains
-# 引入 Keys 模块
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 
-import copy
+# 引入 Keys 模块
+
 dr = webdriver.Chrome()
 
 
@@ -74,7 +71,7 @@ def star_active(link_name):
 
 
 # 到达报价页面
-def star_setup_price(): 
+def star_setup_price():
     WebDriverWait(dr, 10, 1).until(
         lambda the_driver: the_driver.find_element_by_xpath(
             '//div[@class="next-row"]/div/div[@class="next-col"]/div[@class="stepItem"]').is_displayed()
@@ -149,6 +146,6 @@ toLoginPage = dr.find_element_by_css_selector('#J_SiteNavLogin .site-nav-sign .h
 toLoginPage.click()
 
 login({
-    "account": "南极人淘友专卖店:豆芽",
-    'password': "mbyd20140520yw"
+    "account": "",
+    'password': ""
 })
